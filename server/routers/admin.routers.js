@@ -2,6 +2,7 @@ import { Router } from "express";
 
 //Read Controllers
 import adminView from "../controllers/admin/adminController.js";
+import apiView from "../controllers/admin/apiController.js";
 import teasView from "../controllers/admin/Read/teas.js";
 import categoriesView from "../controllers/admin/Read/categories.js";
 import packagingsView from "../controllers/admin/Read/packagings.js";
@@ -39,78 +40,80 @@ const adminRouter = Router();
 
 adminRouter.get("/admin", adminView);
 
+adminRouter.get("/api/v1/cupoftea", apiView);
+
 /*********************************************CRUD teas****************************************************/
 
 //Read
-adminRouter.get("/admin/api/v1/cupoftea/teas", teasView);
+adminRouter.get("/api/v1/cupoftea/teas", teasView);
 
 //Create
-adminRouter.post("/admin/api/v1/cupoftea/teas", createTea);
+adminRouter.post("/api/v1/cupoftea/teas", createTea);
 
 //Update
-// adminRouter.put("/admin/api/v1/cupoftea/teas/:id", updateTea);
+// adminRouter.put("/api/v1/cupoftea/teas/:id", updateTea);
 
 //Delete
-// adminRouter.delete("/admin/api/v1/cupoftea/teas/:id", removeTea);
+// adminRouter.delete("/api/v1/cupoftea/teas/:id", removeTea);
 
 
 /*********************************************CRUD categories****************************************************/
  
 //Read
-adminRouter.get("/admin/api/v1/cupoftea/categories", categoriesView);
+adminRouter.get("/api/v1/cupoftea/categories", categoriesView);
 
 //Create
-// adminRouter.post("/admin/api/v1/cupoftea/categories", createCategory);
+// adminRouter.post("/api/v1/cupoftea/categories", createCategory);
 
 //Update
-// adminRouter.put("/admin/api/v1/cupoftea/categories/:id", updateCategory);
+// adminRouter.put("/api/v1/cupoftea/categories/:id", updateCategory);
 
 //Delete
-// adminRouter.delete("/admin/api/v1/cupoftea/categories/:id", removeCategory);
+// adminRouter.delete("/api/v1/cupoftea/categories/:id", removeCategory);
 
 
 /*********************************************CRUD packagings****************************************************/
 
  //Read
-adminRouter.get("/admin/api/v1/cupoftea/packagings", packagingsView);
+adminRouter.get("/api/v1/cupoftea/packagings", packagingsView);
 
 //Create
-// adminRouter.post("/admin/api/v1/cupoftea/packagings", createPackaging);
+// adminRouter.post("/api/v1/cupoftea/packagings", createPackaging);
 
 //Update
-// adminRouter.put("/admin/api/v1/cupoftea/packagings/:id", updatePackaging);
+// adminRouter.put("/api/v1/cupoftea/packagings/:id", updatePackaging);
 
 //Delete
-// adminRouter.delete("/admin/api/v1/cupoftea/packagings/:id", removePackaging);
+// adminRouter.delete("/api/v1/cupoftea/packagings/:id", removePackaging);
 
 /*********************************************CRUD packsTeas****************************************************/
 
  //Read
-adminRouter.get("/admin/api/v1/cupoftea/packsTeas", packsTeasView);
+adminRouter.get("/api/v1/cupoftea/packsTeas", packsTeasView);
 
 //Create
-// adminRouter.post("/admin/api/v1/cupoftea/packsTeas", createPackTea);
+// adminRouter.post("/api/v1/cupoftea/packsTeas", createPackTea);
 
 //Update
-// adminRouter.put("/admin/api/v1/cupoftea/packsTeas/:id", updatePackTea);
+// adminRouter.put("/api/v1/cupoftea/packsTeas/:id", updatePackTea);
 
 //Delete
-// adminRouter.delete("/admin/api/v1/cupoftea/packsTeas/:id", removePackTea);
+// adminRouter.delete("/api/v1/cupoftea/packsTeas/:id", removePackTea);
 
 
 /*********************************************CRUD images****************************************************/
 
  //Read
-adminRouter.get("/admin/api/v1/cupoftea/images", imagesView);
+adminRouter.get("/api/v1/cupoftea/images", imagesView);
 
 //Create
-// adminRouter.post("/admin/api/v1/cupoftea/images", createImage);
+// adminRouter.post("/api/v1/cupoftea/images", createImage);
 
 //Update
-// adminRouter.put("/admin/api/v1/cupoftea/images/:id", updateImage);
+// adminRouter.put("/api/v1/cupoftea/images/:id", updateImage);
 
 //Delete
-// adminRouter.delete("/admin/api/v1/cupoftea/images/:id", removeImage);
+// adminRouter.delete("/api/v1/cupoftea/images/:id", removeImage);
 
 
 export default adminRouter;

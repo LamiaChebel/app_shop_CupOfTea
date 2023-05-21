@@ -10,7 +10,7 @@ function Header() {
     return (
         <header id="mainHeader">
             <p>Livraison offerte &agrave; partir de 65&euro; d&apos;achat !</p>
-            <img src={ribbon} alt="" />
+            <img id="ribbon" src={ribbon} alt="" />
 
             <Link to={"/"}>
                 <h1><img src={logo} alt="le logo Cup of Tea avec une tasse de thé fumante" /></h1>

@@ -39,6 +39,8 @@ Cible de l'application : ados, jeunes adultes, adultes, les vieux
 > react-font-awesome
 > fontawesome@svg-core
 > fortawesome/free-solid-svg-icons
+> fontawesome/free-regular-svg-icons
+> normalize.css
 
 
 **Fonctionnalités** : 
@@ -147,26 +149,63 @@ Hauteur de ligne : 1.4 */
 
 
 app_cupoftea
+|    |_ .env
+|    |_ client
+|    |_ node_modules
+|    |_ public
+|    |   |_ fonts
+|    |   |_ Readme
+|    |   |_ index.html
+|    |_ src
+|        |_ assets
+|        |    |_ images
+|        |_ datas  
+|        |    |_ datasFooter.js
+|        |_ hooks
+|        |   |_ reducers
+|        |   |_ redux
+|        |_ views
+|        |   |_ MainComponents
+|        |   |   |_ FooterComponents
+|        |   |   |_ HeaderComponents
+|        |   |   |_ Header.jsx
+|        |   |   |_ Footer.jsx
+|        |   |_ Pages
+|        |   |   |_ Home
+|        |   |   |   |_ Components
+|        |   |   |   |_ Home.jsx
+|        |   |   |_ About
+|        |   |   |   |_ Components
+|        |   |   |   |_ About.jsx
+|        |   |   |_ Teas
+|        |   |   |   |_ Components
+|        |   |   |   |_ Teas.jsx
+|        |   |   |   |_ TeaDetail.jsx
+|        |   |   |_ Admin
+|        |   |   |   |_ Components
+|        |   |   |   |_ Admin.jsx
+|        |   |   |   
+|        |_ App.jsx
+|        |_ index.js
+|        |_ index.css
 |_ node_modules
-|_ public
-|    |_ ressources
-|       |_ images
-|       |_ fonts
-|       |_ css
-|           |_ style.css (global)
-|           |_ normalize.css
-|_ src
-    |_ serveur
-    |    |_ config
-    |    |   |_ const.js
-    |    |   |_ database.js
-    |    |_ controllers
+|_ server
+    |_ config
+    |   |_ const.js
+    |   |_ database.js
+    |_ controllers
     |    |   |_ homeController.js
     |    |   |_ teaShopController.js
     |    |   |_ teaDetailController.js
     |    |   |_ aboutController.js
-    |    |   |_ adminController.js      
+    |    |   |_ admin
+    |    |        |_ Create
+    |    |        |_ Delete           
+    |    |        |_ Read           
+    |    |        |_ Update            
+    |    |        |_ adminController.js                     
     |    |_ middlewares
+    |    |   |_ errorPage.js
     |    |_ utils
     |    |    |_ utils.js
     |    |_ routers
@@ -175,33 +214,6 @@ app_cupoftea
     |    |   |_ aboutRouter.js
     |    |   |_ admin.routers.js
     |    |_ server.js
-    |
-    |_ client
-        |_ hooks
-        |   |_ reducers
-        |   |_ redux
-        |_ views
-        |   |_ MainComponents
-        |   |   |_ Header.jsx
-        |   |   |_ Footer.jsx
-        |   |_ Pages
-        |   |   |_ Home
-        |   |   |   |_ Components
-        |   |   |   |_ Home.jsx
-        |   |   |_ About
-        |   |   |   |_ Components
-        |   |   |   |_ About.jsx
-        |   |   |_ Teas
-        |   |   |   |_ Components
-        |   |   |   |_ Teas.jsx
-        |   |   |   |_ TeaDetail.jsx
-        |   |   |_ Admin
-        |   |   |   |_ Components
-        |   |   |   |_ Admin.jsx
-        |   |   |   
-        |_ App.jsx
-        |_ index.js
-
 
     ...
 

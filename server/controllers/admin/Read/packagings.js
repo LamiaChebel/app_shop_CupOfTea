@@ -5,7 +5,7 @@ const packagingsView = async (req,res) => {
     try {
         const sql = `SELECT id, weight from packaging`;
         const [packagingsResult] = await pool.query(sql);
-        console.log(packagingsResult);
+        console.log("Display packagings succeed");
         res.status(200).json({packagings : packagingsResult});
 
     } catch (error) {
@@ -19,7 +19,7 @@ export const packagingDetailView = async (req,res) => {
         const sql = `SELECT id, weight from packaging
                     WHERE id = ? `;
         const [packagingResult] = await pool.query(sql,[req.params.id]);
-        console.log("Display succeed");
+        console.log("Display packaging succeed");
         res.status(200).json({packaging : packagingResult});
 
     } catch (error) {

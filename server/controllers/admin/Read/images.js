@@ -5,7 +5,7 @@ const imagesView = async (req,res) => {
     try {
         const sql = `SELECT id, title, url from image`;
         const [imagesResult] = await pool.query(sql);
-        console.log(imagesResult);
+        console.log("Display images succeed");
         res.status(200).json({images : imagesResult});
 
     } catch (error) {
@@ -19,7 +19,7 @@ export const imageDetailView = async (req,res) => {
         const sql = `SELECT id, title, url from image
                     WHERE id = ? `;
         const [imageResult] = await pool.query(sql,[req.params.id]);
-        console.log("Display succeed");
+        console.log("Display image succeed");
         res.status(200).json({image : imageResult});
 
     } catch (error) {

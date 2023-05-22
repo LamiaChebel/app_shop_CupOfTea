@@ -5,7 +5,7 @@ const categoriesView = async (req,res) => {
     try {
         const sql = `SELECT id, title, description, image_id from category`;
         const [categoriesResult] = await pool.query(sql);
-        console.log(categoriesResult);
+        console.log("Display categories succeed");
         res.status(200).json({categories : categoriesResult});
 
     } catch (error) {
@@ -19,7 +19,7 @@ export const categoryDetailView = async (req,res) => {
         const sql = `SELECT id, title, description, image_id from category
                     WHERE id = ? `;
         const [categoryResult] = await pool.query(sql,[req.params.id]);
-        console.log("Display succeed");
+        console.log("Display category succeed");
         res.status(200).json({category : categoryResult});
 
     } catch (error) {

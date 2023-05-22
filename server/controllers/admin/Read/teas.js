@@ -5,7 +5,7 @@ const teasView = async (req,res) => {
         const sql = `SELECT tea.id, tea.title, tea.subtitle, tea.description, tea.story_tea,
                     tea.created_at, tea.our_favorite, tea.category_id, tea.image_id from tea`;
         const [teasResult] = await pool.query(sql);
-        console.log(teasResult);
+        console.log("Display teas succeed");
         res.status(200).json({teas : teasResult});
 
     } catch (error) {
@@ -21,7 +21,7 @@ export const teaDetailView = async (req,res) => {
                     tea.created_at, tea.our_favorite, tea.category_id, tea.image_id from tea
                     WHERE tea.id = ? `;
         const [teaResult] = await pool.query(sql,[req.params.id]);
-        console.log("Display succeed");
+        console.log("Display tea succeed");
         res.status(200).json({tea : teaResult});
 
     } catch (error) {

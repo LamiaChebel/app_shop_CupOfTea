@@ -3,11 +3,11 @@ import { Router } from "express";
 //Read Controllers
 import adminView from "../controllers/admin/adminController.js";
 import apiView from "../controllers/admin/apiController.js";
-import teasView from "../controllers/admin/Read/teas.js";
-import categoriesView from "../controllers/admin/Read/categories.js";
-import packagingsView from "../controllers/admin/Read/packagings.js";
-import packsTeasView from "../controllers/admin/Read/packsTeas.js";
-import imagesView from "../controllers/admin/Read/images.js";
+import teasView, { teaDetailView } from "../controllers/admin/Read/teas.js";
+import categoriesView , { categoryDetailView }from "../controllers/admin/Read/categories.js";
+import packagingsView , { packagingDetailView }from "../controllers/admin/Read/packagings.js";
+import packsTeasView , { packTeaDetailView }from "../controllers/admin/Read/packsTeas.js";
+import imagesView , { imageDetailView }from "../controllers/admin/Read/images.js";
 
 //Create Controllers
 import createTea from "../controllers/admin/Create/tea.js";
@@ -17,7 +17,7 @@ import createTea from "../controllers/admin/Create/tea.js";
 // import createImage from "../controllers/admin/Create/image.js";
 
 //Upadet Controllers
-// import updateTea from "../controllers/admin/Update/tea.js";
+import updateTea from "../controllers/admin/Update/tea.js";
 // import updateCategory from "../controllers/admin/Update/category.js";
 // import updatePackaging from "../controllers/admin/Update/packaging.js";
 // import updatePackTea from "../controllers/admin/Update/packTea.js";
@@ -25,7 +25,7 @@ import createTea from "../controllers/admin/Create/tea.js";
 
 
 //Delete Controllers
-// import removeTea from "../controllers/admin/Delete/tea.js";
+import removeTea from "../controllers/admin/Delete/tea.js";
 // import removeCategory from "../controllers/admin/Delete/category.js";
 // import removePackaging from "../controllers/admin/Delete/packaging.js";
 // import removePackTea from "../controllers/admin/Delete/packTea.js";
@@ -46,21 +46,24 @@ adminRouter.get("/api/v1/cupoftea", apiView);
 
 //Read
 adminRouter.get("/api/v1/cupoftea/teas", teasView);
+adminRouter.get("/api/v1/cupoftea/teas/:id", teaDetailView);
+
 
 //Create
-adminRouter.post("/api/v1/cupoftea/teas", createTea);
+// adminRouter.post("/api/v1/cupoftea/teas", createTea);
 
 //Update
-// adminRouter.put("/api/v1/cupoftea/teas/:id", updateTea);
+adminRouter.put("/api/v1/cupoftea/teas/:id", updateTea);
 
 //Delete
-// adminRouter.delete("/api/v1/cupoftea/teas/:id", removeTea);
+adminRouter.delete("/api/v1/cupoftea/teas/:id", removeTea);
 
 
 /*********************************************CRUD categories****************************************************/
  
 //Read
 adminRouter.get("/api/v1/cupoftea/categories", categoriesView);
+adminRouter.get("/api/v1/cupoftea/categories/:id", categoryDetailView);
 
 //Create
 // adminRouter.post("/api/v1/cupoftea/categories", createCategory);
@@ -76,6 +79,7 @@ adminRouter.get("/api/v1/cupoftea/categories", categoriesView);
 
  //Read
 adminRouter.get("/api/v1/cupoftea/packagings", packagingsView);
+adminRouter.get("/api/v1/cupoftea/packagings/:id", packagingDetailView);
 
 //Create
 // adminRouter.post("/api/v1/cupoftea/packagings", createPackaging);
@@ -90,6 +94,7 @@ adminRouter.get("/api/v1/cupoftea/packagings", packagingsView);
 
  //Read
 adminRouter.get("/api/v1/cupoftea/packsTeas", packsTeasView);
+adminRouter.get("/api/v1/cupoftea/packsTeas/packaging/:p_id/tea/:t_id", packTeaDetailView);
 
 //Create
 // adminRouter.post("/api/v1/cupoftea/packsTeas", createPackTea);
@@ -105,6 +110,7 @@ adminRouter.get("/api/v1/cupoftea/packsTeas", packsTeasView);
 
  //Read
 adminRouter.get("/api/v1/cupoftea/images", imagesView);
+adminRouter.get("/api/v1/cupoftea/images/:id", imageDetailView);
 
 //Create
 // adminRouter.post("/api/v1/cupoftea/images", createImage);

@@ -1,12 +1,15 @@
 import {pool} from "../../../config/database.js";
 
-const teasView = async (req,res) => {
+const removeTea = async (req,res) => {
     try {
-        const sql = `SELECT tea.id, tea.title, tea.subtitle, tea.description, tea.story_tea,
-                    tea.created_at, tea.our_favorite, tea.category_id, tea.image_id from tea`;
-        const [teasResult] = await pool.query(sql);
-        console.log(teasResult);
-        res.status(200).json({teas : teasResult});
+        const sql = `DELETE from tea WHERE id = ?`;
+        const [result] = await pool.query(sql, [req.params.id]);
+        if(!result){
+            return res.status(404).json({msg : `Can't find the tea with an ${req.params.id}`});
+        }
+
+        console.log("Delete succeed");
+        return res.status(200).json({tea : result});
 
     } catch (error) {
         res.status(500).json(error); //revoir code erreur
@@ -14,4 +17,4 @@ const teasView = async (req,res) => {
     }
 };
 
-export default teasView;
+export default removeTea;

@@ -3,7 +3,7 @@ import Nav from "./Nav";
 function Header() {
     return (
         <header className="adminHeader">
-            <h1>The DashBoard Admin</h1>
+            <h1>The DashBoard's Admin</h1>
             <Nav />
         </header>
     )

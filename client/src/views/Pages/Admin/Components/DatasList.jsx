@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import spinner from "../../../../assets/images/spinner.svg";
+
 function DatasList() {
 
     const [datas, setDatas] = useState([]);
@@ -17,7 +19,9 @@ function DatasList() {
     return (
         <>
             {!datas.length === 0 ? (
-                <p>Chargement de la liste...</p>)
+                <p>Chargement de la liste...<br />
+                <img src={spinner} alt="en attente du chargement de la page" />
+                </p>)
                 : (
                 <>
                 <section>

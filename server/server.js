@@ -4,6 +4,11 @@ import "dotenv/config";
 import { LOCAL_PORT } from "./config/const.js";
 
 import adminRouter from "./routers/admin.routers.js";
+import categoryRouter from "./routers/categories.routes.js";
+import imageRouter from "./routers/images.routes.js";
+import packagingRouter from "./routers/packagings.routes.js";
+import packTeaRouter from "./routers/packagingsTeas.routes.js";
+import teaRouter from "./routers/teas.routes.js";
 
 /*************************************Déclaration de nos variables********************************************** */
 
@@ -15,7 +20,12 @@ const app = express();
 
 app.use(express.urlencoded({extended : true}))
     .use(express.json())
-    .use(adminRouter);
+    .use(adminRouter)
+    .use(categoryRouter)
+    .use(imageRouter)
+    .use(packagingRouter)
+    .use(packTeaRouter)
+    .use(teaRouter);
 
 
 /************************************Ecoute du serveur************************************************/

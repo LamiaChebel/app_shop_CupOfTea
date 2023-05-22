@@ -3,11 +3,11 @@ function Nav(){
     return(
         <>
         <nav className="adminNav">
-            <Link to={'/teas'}></Link>
-            <Link to={'/categories'}></Link>
-            <Link to={'/images'}></Link>
-            <Link to={'/packagings'}></Link>
-            <Link to={'/packsteas'}></Link>
+            <Link to={'/teas'}>Thés</Link>
+            <Link to={'/categories'}>Catégories</Link>
+            <Link to={'/images'}>Images</Link>
+            <Link to={'/packagings'}>Packagings</Link>
+            <Link to={'/packsteas'}>Packagings_Teas</Link>
         </nav>
         </>
     )

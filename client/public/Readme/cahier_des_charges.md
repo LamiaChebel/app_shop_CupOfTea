@@ -23,12 +23,12 @@ Cible de l'application : ados, jeunes adultes, adultes, les vieux
 
 > Mysql2 -> module de gestion de base de données//
 > Express -> framework pour gérer les routes//
+> Formidable -> gérer les données soumis par les formulaires
 > Bcrypt -> cryptage des mots de passes
 > UUID -> Pour gérer l'id unique lors de la création d'un produit //
 > Nodemon -> Pour un watcher en mode développement//
 > Dotenv -> accès aux variables d'environnement//
 > express-session -> sessions connectées
-> formidable -> formulaires
 
 **>Front-end :**
 

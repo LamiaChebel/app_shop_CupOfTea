@@ -15,6 +15,11 @@ code {
 
 /* Global*/
 
+@font-face {
+  font-family: 'Amaranth';
+  src: url(./assets/fonts/amaranth.otf) format('opentype');
+}
+
 /* VARIABLES */
 :root {
   --color-primary: #96b011;
@@ -26,6 +31,7 @@ code {
 }
 
 /* GLOBAL */
+
 body * {
   box-sizing: border-box;
   margin: 0;
@@ -59,13 +65,8 @@ ul {
   list-style: none; 
 }
 
-a {
-  display: block;
-  color: #fff;
-  text-decoration: none;    
-}
 
-p:not(#mainHeader p, .txtFooter) {
+p:not(#mainHeader, .txtFooter) {
   margin: 2rem 0;
   line-height: 1.4;
 }
@@ -91,20 +92,22 @@ p:not(#mainHeader p, .txtFooter) {
   position: relative;
 }
 
-#mainHeader p {
+#mainHeader > p {
   padding: 1rem;
   background-color: #0a0a0a13;
 }
 
-#ribbon {
-  visibility: hidden;
+.ribbon {
   width :100px;
   position :absolute;
   top : 0;
   right : 0;
 }
+ .hidden {
+  visibility: hidden;
+ }
 
-.cart {
+.mycart {
   width: -moz-fit-content;
   width: fit-content;
   margin: 1rem 0;
@@ -115,11 +118,15 @@ p:not(#mainHeader p, .txtFooter) {
   box-shadow: 1px 1px 7px 2px #8f8e8e60;
 }
 
-.cart FontAwesomeIcon {
+.mycart .icon-cart {
   padding: 1rem;
   border: 1px solid #bfbfbf;
   border-radius: 50%;
   color: #e9e7e7;
+}
+
+.txt-mycart {
+  display : none;
 }
 
 #mainHeader nav {
@@ -141,18 +148,18 @@ main {
 }
 
 /* event */
-/* .event {
+.event {
   display: none;
-} */
+}
 
 /* section div */
 
 /* hover */
-/* .tea-category a:hover{
+.category-menu .hover{
   opacity: 0.5;
 } 
 
-.tea-category,
+.category-menu,
 main > div {
   display: flex;
   flex-wrap: wrap;
@@ -164,24 +171,24 @@ main > div {
   text-align: center;
 }
 
-.tea-category h2,
+.category-menu h2,
 main > div h2 {
   width: 100%;
   color: var(--color-primary);
 }
 
-.tea-category a,
+.category-menu Link,
 main > div h3,
 main > div .price {
   color: var(--color-text);
   font-weight: bold;
-} */
+} 
 
-/* .price {
+.price {
   display: block;
   padding: 1rem;
   font-size: 2rem;
-} */
+}
 
 /* border on each side */
 main h2 {
@@ -194,10 +201,19 @@ main h2 span {
   padding: 0 1rem;
 }
 /*  */
-/* .suggestion p:nth-child(3)  {
+.suggestion p:nth-child(3)  {
   text-transform: capitalize;
-} */
+}
 
+/*Main admin */
+
+.admin Link {
+  color:var(--color-text);
+}
+
+DataLists {
+  display : none;
+}
 /* FOOTER */
 
 .feature {
@@ -257,7 +273,23 @@ main h2 span {
   text-align: justify;
   line-height: 1.4;
 }
+.textFooter a {
+  display: inline;
 
+}
 .txtFooter img {
   width : 50px;  
+}
+
+/*Tablets et Desktops */
+
+@media screen and ( min-width: 480px){
+ 
+  .ribbon{
+    visibility: visible ;
+  }
+
+  .event {
+    display : block;
+  }
 }

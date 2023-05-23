@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import './index.css';
 import 'normalize.css';
+import "./assets/fonts/amaranth.otf";
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

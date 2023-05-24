@@ -23,6 +23,7 @@
   "license": "ISC",
   "dependencies": {
     "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "formidable": "^3.2.5",

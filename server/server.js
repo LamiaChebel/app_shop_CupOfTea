@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import "dotenv/config";
 
 import { LOCAL_PORT } from "./config/const.js";
@@ -20,6 +21,7 @@ const app = express();
 
 app.use(express.urlencoded({extended : true}))
     .use(express.json())
+    .use(cors())
     .use(adminRouter)
     .use(categoryRouter)
     .use(imageRouter)

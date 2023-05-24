@@ -1,14 +1,16 @@
-import { Link} from "react-router-dom";
+import { Link, Outlet} from "react-router-dom";
 function Nav(){
     return(
         <>
         <nav className="adminNav">
-            <Link to={'/teas'}>Thés</Link>
-            <Link to={'/categories'}>Catégories</Link>
-            <Link to={'/images'}>Images</Link>
-            <Link to={'/packagings'}>Packagings</Link>
-            <Link to={'/packsteas'}>Packagings_Teas</Link>
+            <Link to={'/admin/teas'}>Thés</Link>
+            <Link to={'/admin/categories'}>Catégories</Link>
+            <Link to={'/admin/images'}>Images</Link>
+            <Link to={'/admin/packagings'}>Packagings</Link>
+            <Link to={'/admin/packsteas'}>Packagings_Teas</Link>
         </nav>
+        <Outlet/>
+
         </>
     )
 }

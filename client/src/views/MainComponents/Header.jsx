@@ -15,7 +15,7 @@ function Header() {
             <img className="ribbon hidden" src={ribbon} alt="" />
 
             <div className="mycart">
-                <Link to={"/mycart"} className={styles.link}>
+                <Link to="/mycart" className={styles.link}>
                     <p><span className="txt-mycart">Mon panier</span>
                         <FontAwesomeIcon icon={faCartShopping} className= "icon-cart" aria-hidden="true"/>
                         <span>42,00&euro;</span>
@@ -23,7 +23,7 @@ function Header() {
                 </Link>
             </div>
 
-            <Link to={"/"}>
+            <Link to="/">
                 <h1><img src={logo} alt="le logo Cup of Tea avec une tasse de thé fumante" /></h1>
             </Link>
             

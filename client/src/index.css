@@ -50,7 +50,7 @@ body {
   background-color: var(--color-bcg);
 }
 
-h2, h3, h4 {
+h2, h3 {
   font-family: var(--font-title);
 }
 
@@ -66,11 +66,13 @@ ul {
 }
 
 
-p:not(#mainHeader, .txtFooter) {
+p {
   margin: 2rem 0;
   line-height: 1.4;
 }
-
+ #mainHeader p, .txtFooter p {
+  margin : 0;
+ }
 /* .cta {
   width: fit-content;
   margin: auto;
@@ -125,6 +127,9 @@ p:not(#mainHeader, .txtFooter) {
   color: #e9e7e7;
 }
 
+.mycart p {
+  margin : 0;
+}
 .txt-mycart {
   display : none;
 }
@@ -205,6 +210,26 @@ main h2 span {
   text-transform: capitalize;
 }
 
+/*Main about */
+
+/* .about{
+  width : 90%;
+  margin : 2rem auto;
+}
+
+.about h2, .about h3 {
+  margin : 3rem 0;
+  font-weight:100;
+
+} */
+
+h2 {
+  font-size : 3.5rem;
+}
+
+h3 {
+  color: var(--color-primary);
+}
 /*Main admin */
 
 .admin Link {

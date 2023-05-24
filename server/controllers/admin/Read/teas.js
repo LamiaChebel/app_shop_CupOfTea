@@ -17,7 +17,7 @@ const teasView = async (req,res) => {
 export const teaDetailView = async (req,res) => {
 
     try {
-        const sql = `SELECT tea.id, tea.title, tea.subtitle, tea.description, tea.story_tea,
+        const sql = `SELECT tea.id AS teaId, tea.title, tea.subtitle, tea.description, tea.story_tea,
                     tea.created_at, tea.our_favorite, tea.category_id, tea.image_id from tea
                     WHERE tea.id = ? `;
         const [teaResult] = await pool.query(sql,[req.params.id]);

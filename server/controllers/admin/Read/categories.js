@@ -3,7 +3,10 @@ import {pool} from "../../../config/database.js";
 const categoriesView = async (req,res) => {
 
     try {
-        const sql = `SELECT id, title, description, image_id from category`;
+        const sql = `SELECT category.id, category.title, category.description, 
+                    category.image_id, image.title AS imageTitle, 
+                    image.url from category
+                    JOIN image ON category.image_id = image.id`;
         const [categoriesResult] = await pool.query(sql);
         console.log("Display categories succeed");
         res.status(200).json({categories : categoriesResult});

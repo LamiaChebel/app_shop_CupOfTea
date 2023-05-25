@@ -6,8 +6,6 @@ import logo from "../../assets/images/logo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
-import styles from "./index.module.css";
-
 function Header() {
     return (
         <header id="mainHeader">
@@ -15,7 +13,7 @@ function Header() {
             <img className="ribbon hidden" src={ribbon} alt="" />
 
             <div className="mycart">
-                <Link to="/mycart" className={styles.link}>
+                <Link to="/mycart" className="link">
                     <p><span className="txt-mycart">Mon panier</span>
                         <FontAwesomeIcon icon={faCartShopping} className= "icon-cart" aria-hidden="true"/>
                         <span>42,00&euro;</span>
@@ -23,7 +21,7 @@ function Header() {
                 </Link>
             </div>
 
-            <Link to="/">
+            <Link to="/" className = "link">
                 <h1><img src={logo} alt="le logo Cup of Tea avec une tasse de thé fumante" /></h1>
             </Link>
             

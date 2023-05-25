@@ -28,7 +28,7 @@ function Wrapper2() {
     return (
         <section className="category-menu">
 
-            <h3><span className="middle_border"></span>Choisissez votre th&eacute;</h3>
+            <h3><span className="middle_border"></span>Choisissez votre th&eacute;<span className="middle_border"></span></h3>
 
             <nav>
                 {(!category.length) ? <img className="spinner" src={spinner} alt="Chargement de la page" /> :

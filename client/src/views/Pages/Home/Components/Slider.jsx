@@ -4,7 +4,7 @@ import slider1 from "../../../../assets/images/slider/1.jpg";
 import slider2 from "../../../../assets/images/slider/2.jpg";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircle } from "@fortawesome/free-regular-svg-icons";
+import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
 
 function Slider() {

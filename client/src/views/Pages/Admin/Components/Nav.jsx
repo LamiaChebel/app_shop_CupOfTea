@@ -9,7 +9,6 @@ function Nav(){
             <Link to={'/admin/packagings'}>Packagings</Link>
             <Link to={'/admin/packsteas'}>Packagings_Teas</Link>
         </nav>
-        <Outlet/>
 
         </>
     )

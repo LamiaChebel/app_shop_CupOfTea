@@ -11,7 +11,7 @@ import TeaItem from "./views/Pages/Teas/TeaItem";
 
 import ErrorPage from "./views/Pages/Error/ErrorPage";
 
-// import CrudCategories, CrudImages, CrudPackagings, CrudPacksTeas, CrudTeas  from "./views/Pages/Admin/Components/CRUD";
+import CrudTeas  from "./views/Pages/Admin/Components/CRUD/CrudTeas";
 
 function App() {
   return (
@@ -24,8 +24,8 @@ function App() {
       <Route path="teas/:id" element={<TeaItem />} /> {/*<Outlet/> à utiliser */}
       <Route path="about" element={<About />} />
       <Route path="admin" element={<Admin />} /> {/*<Outlet/> à utiliser */}
-      {/* <Route path="admin/teas" element={<CrudTeas />} /> 
-      <Route path="admin/categories" element={<CrudCategories />} /> 
+      <Route path="admin/teas" element={<CrudTeas />} /> 
+      {/* <Route path="admin/categories" element={<CrudCategories />} /> 
       <Route path="admin/images" element={<CrudImages />} /> 
       <Route path="admin/packagings" element={<CrudPackagings />} /> 
       <Route path="admin/packsteas" element={<CrudPacksTeas />} />  */}

@@ -52,8 +52,21 @@ body {
 
 h2, h3 {
   font-family: var(--font-title);
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 100;
 }
 
+h2 {
+  width: 100%;
+  color: var(--color-primary);
+}
+
+figcaption {
+  margin : 12px 0;
+  text-align: center;
+  font-size: 1.2rem;
+}
 img {
   display: block;
   max-width: 100%;
@@ -66,20 +79,19 @@ ul {
 }
 
 
-p {
+p:not(p:first, p:last-of-type) {
   margin: 2rem 0;
   line-height: 1.4;
 }
- #mainHeader p, .txtFooter p {
-  margin : 0;
- }
-/* .cta {
+
+ .cta {
+  width: -moz-fit-content;
   width: fit-content;
-  margin: auto;
+  margin: 2rem auto;
   padding: 1.8rem;
   text-transform: uppercase;
   background-color: var(--color-cta);
-} */
+}
 
 /* MAIN HEADER */
 
@@ -120,18 +132,29 @@ p {
   box-shadow: 1px 1px 7px 2px #8f8e8e60;
 }
 
-.mycart .icon-cart {
+.icon-cart {
   padding: 1rem;
   border: 1px solid #bfbfbf;
   border-radius: 50%;
   color: #e9e7e7;
 }
 
-.mycart p {
-  margin : 0;
+.mycart span {
+  padding : 10px;
+  justify-content: center;
 }
 .txt-mycart {
   display : none;
+}
+
+.link {
+  display: block;
+  color: #fff;
+  text-decoration: none;    
+}
+
+.link:hover {
+  opacity: 0.4;
 }
 
 #mainHeader nav {
@@ -141,32 +164,50 @@ p {
   padding: 2rem 0;
 }
 
-#mainHeader nav a {
+#mainHeader nav .link {
   padding: 0.5rem;
   text-transform: uppercase;
 }
 
+.slider-nav {
+  text-align: center;
+  margin-top : 1rem;
+}
+
+button {
+  border:none;
+  padding:0 0.5rem;  
+}
+
+button:hover{
+  opacity: 0.5;
+}
+
 /* MAIN */
+
 main {
   max-width: 1100px;
   margin: 2.5rem auto;
 }
 
 /* event */
+
 .event {
   display: none;
 }
 
-/* section div */
+/* section  */
 
 /* hover */
-.category-menu .hover{
-  opacity: 0.5;
+
+.hover:hover {
+  opacity: 0.3;
 } 
 
 .category-menu,
-main > div {
+.suggestions {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   gap: 4rem;
@@ -176,15 +217,9 @@ main > div {
   text-align: center;
 }
 
-.category-menu h2,
-main > div h2 {
-  width: 100%;
-  color: var(--color-primary);
-}
 
-.category-menu Link,
-main > div h3,
-main > div .price {
+.category-menu .link,
+.home > .suggestions .price {
   color: var(--color-text);
   font-weight: bold;
 } 
@@ -195,24 +230,30 @@ main > div .price {
   font-size: 2rem;
 }
 
-/* border on each side */
-main h2 {
-  border-top: 1px solid rgb(220, 220, 220);
+/* middle_border*/
+
+h3 {
+  color:var(--color-primary);
 }
-main h2 span {
+
+h3 > span {
+  display: inline-block;
+  width:30%;
   position: relative;
-  top: -1.6rem;
+  top: -0.5rem;
   background-color: #ffffff;
   padding: 0 1rem;
+  border-top: 1px solid rgb(220, 220, 220);
+
 }
-/*  */
-.suggestion p:nth-child(3)  {
+
+.suggestions p:nth-child(3)  {
   text-transform: capitalize;
 }
 
 /*Main about */
 
-/* .about{
+.about{
   width : 90%;
   margin : 2rem auto;
 }
@@ -221,24 +262,44 @@ main h2 span {
   margin : 3rem 0;
   font-weight:100;
 
-} */
+}
 
-h2 {
+.about h2 {
   font-size : 3.5rem;
+  text-align: left;
+  color: var(--color-text);
 }
 
 h3 {
   color: var(--color-primary);
 }
+
 /*Main admin */
 
-.admin Link {
-  color:var(--color-text);
+.admin {
+width:80%;
+margin: 2rem auto;
+}
+
+.admin .adminNav {
+  width:30%;
+  padding: 4rem;;
+  display : flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap:2rem;
+  background-color: var(--color-text);
+}
+
+.admin a {
+  color:var(--color-bcg);
+  text-decoration: none;
 }
 
 DataLists {
   display : none;
 }
+
 /* FOOTER */
 
 .feature {
@@ -253,7 +314,7 @@ DataLists {
   font-size : 1.1rem;
 }
 
-.feature FontAwesomeIcon {
+.feature i {
   display: block;
   text-align: center;
   padding: 1rem;
@@ -298,10 +359,12 @@ DataLists {
   text-align: justify;
   line-height: 1.4;
 }
+
 .textFooter a {
   display: inline;
 
 }
+
 .txtFooter img {
   width : 50px;  
 }
@@ -310,6 +373,23 @@ DataLists {
 
 @media screen and ( min-width: 480px){
  
+  h1 {
+    position: relative;
+    left:-370px;
+  }
+
+  #mainHeader nav {
+  flex-direction: row;
+  justify-content: center;
+  }
+
+  .mycart {
+    position : absolute;
+    right : 30px;
+    top : 65px;
+    border : none;
+
+  }
   .ribbon{
     visibility: visible ;
   }
@@ -317,4 +397,14 @@ DataLists {
   .event {
     display : block;
   }
+
+.category-menu,
+.suggestions {
+  flex-direction: row;
+  flex-wrap: ;
+}
+
+a{
+  display: inline-block;
+}
 }

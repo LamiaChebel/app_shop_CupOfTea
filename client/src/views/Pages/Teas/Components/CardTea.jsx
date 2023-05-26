@@ -1,16 +1,18 @@
 import { Link, Outlet } from "react-router-dom";
 
-function CardTea(){
-    return(
+function CardTea(props) {
+    const { id, title, url, imageTitle, minPrice } = props;
+
+    return (
         <>
-        {/* si le chemin est teas alors on retourne le 1er élément sinon on retourne le deuxième élément */}
-        <article>
-            <h3></h3>
-            <img src="" alt="" />
-            <p><span className="price"></span></p>
-            <Link to={"/teas/:id"} className="cta">voir ce produit</Link>
+        <article key={id}>
+            <h3>{title}</h3>
+            <img src={url} alt={imageTitle} />
+            <p>A&acute;<span className="price">{minPrice}</span></p>
+            <Link to={`/teas/${id}`} className="cta">voir ce produit</Link>
         </article>
-        <Outlet />
+
+        < Outlet />
         </>
     )
 }

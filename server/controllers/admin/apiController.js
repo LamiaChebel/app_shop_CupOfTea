@@ -20,11 +20,7 @@ const apiView = async(req,res) => {
                     JOIN packaging ON packaging_tea.packaging_id = packaging.id`;
 
         const [result] = await pool.query(sql);
-        // const [teaList] = await pool.query(teas);
-        // const [categoryList] = await pool.query(categories);
-        // const [imageList] = await pool.query(images);
-        // const [packList] = await pool.query(packagings);
-        // const [packTeaList] = await pool.query(packsTeas);
+        
         if(!result.length) {
             console.log('Problem on the request SQL');
             res.status(204).json({message : error.message});

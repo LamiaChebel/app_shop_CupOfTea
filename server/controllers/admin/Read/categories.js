@@ -4,9 +4,9 @@ const categoriesView = async (req,res) => {
 
     try {
         const sql = `SELECT category.id, category.title, category.description, 
-                    category.image_id, image.title AS imageTitle, 
-                    image.url from category
+                    image.title AS imageTitle, image.url AS img from category
                     JOIN image ON category.image_id = image.id`;
+                    
         const [categoriesResult] = await pool.query(sql);
         console.log("Display categories succeed");
         res.status(200).json({categories : categoriesResult});

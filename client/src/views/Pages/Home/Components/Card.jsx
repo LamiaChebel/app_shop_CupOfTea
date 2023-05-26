@@ -5,19 +5,15 @@ function Card(props) {
 
     return (
         <article className={name}>
-            <h3><span className="middle_border">{title}</span>Notre nouveaut&eacute;<span className="middle_border"></span></h3>
+            <h3><span className="middle_border"></span>{title}<span className="middle_border"></span></h3>
             <figure>
                 <img src={src} alt={alt} />
-                <figcaption>Th&eacute; du hammam {legend}</figcaption>
+                <figcaption>{legend}</figcaption>
             </figure>
 
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Ex, quo sequi, sunt a voluptatem totam dignissimos minus
-                aperiam eum quam dolor quas adipisci quaerat sed expedita incidunt
-                ipsum, eius ut nostrum ipsa illum at vitae? Quam. {txt}
-            </p>
+            <p>{txt}</p>
 
-            <p>&Aacute; partir de <span>8,50&euro; {price} </span></p>
+            <p>&Aacute; partir de <span>{price} &euro;</span></p>
 
             <Link to={`/teas/${id}`} className="cta link">voir ce produit</Link>
 

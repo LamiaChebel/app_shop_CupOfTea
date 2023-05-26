@@ -3,7 +3,7 @@ import {pool} from "../../../config/database.js";
 const imagesView = async (req,res) => {
 
     try {
-        const sql = `SELECT id AS imageId, title, url from image`;
+        const sql = `SELECT id, title, url AS img from image`;
         const [imagesResult] = await pool.query(sql);
         console.log("Display images succeed");
         res.status(200).json({images : imagesResult});

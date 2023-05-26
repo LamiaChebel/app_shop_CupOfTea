@@ -8,22 +8,22 @@ function Wrapper2() {
     const [category, setCategory] = useState([]);
 
     useEffect(() => {
-      async function fetchCategories(){
-        try {
-            const res = await fetch("/api/v1/cupoftea/categories");
-            if (!res.ok){
-                throw new Error(`status : ${res.status}, message : ${res.statusText}`);
-            } 
-            const data = await res.json();
-           setCategory(data.categories);
+        async function fetchCategories() {
+            try {
+                const res = await fetch("/api/v1/cupoftea/categories");
+                if (!res.ok) {
+                    throw new Error(`status : ${res.status}, message : ${res.statusText}`);
+                }
+                const data = await res.json();
+                setCategory(data.categories);
+            }
+            catch (error) {
+                console.log(`Problem to fetch categories`, error);
+            }
         }
-        catch (error) {
-            console.log(`Problem to fetch categories`, error);
-        }
-      }
-    fetchCategories();
+        fetchCategories();
     }, [])
-    
+
 
     return (
         <section className="category-menu">
@@ -31,11 +31,16 @@ function Wrapper2() {
             <h3><span className="middle_border"></span>Choisissez votre th&eacute;<span className="middle_border"></span></h3>
 
             <nav>
-                {(!category.length) ? <img className="spinner" src={spinner} alt="Chargement de la page" /> :
+                {(!category.length < 0) ?
+                    <figure>
+                        <img src={spinner} alt="chargement de la page" />
+                        <figcaption>Chargement de la page...</figcaption>
+                    </figure> 
+                :
                 category.map((c) => { return(
-                    <Link key={c.id} to={`/categories/${c.id}`}
+                <Link key={c.id} to={`/categories/${c.id}`}
                     className="hover">
-                    <img key={c.id} src={c.url} alt={c.imageTitle} />
+                    <img key={c.id} src={c.img} alt={c.imageTitle} />
                     {c.title}
                 </Link>)
                 })}

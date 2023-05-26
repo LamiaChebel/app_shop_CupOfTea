@@ -1,3 +1,4 @@
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Header from "./views/MainComponents/Header";
@@ -12,6 +13,10 @@ import TeaItem from "./views/Pages/Teas/TeaItem";
 import ErrorPage from "./views/Pages/Error/ErrorPage";
 
 import CrudTeas  from "./views/Pages/Admin/Components/CRUD/CrudTeas";
+import CrudCategories  from "./views/Pages/Admin/Components/CRUD/CrudCategories";
+import CrudImages  from "./views/Pages/Admin/Components/CRUD/CrudImages";
+import CrudPackagings  from "./views/Pages/Admin/Components/CRUD/CrudPackagings";
+import CrudPacksTeas  from "./views/Pages/Admin/Components/CRUD/CrudPacksTeas";
 
 function App() {
   return (
@@ -19,18 +24,21 @@ function App() {
       <Header />
 
       <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="teas" element={<Teas />} /> {/*<Outlet/> à utiliser */}
-      <Route path="teas/:id" element={<TeaItem />} /> {/*<Outlet/> à utiliser */}
-      <Route path="about" element={<About />} />
-      <Route path="admin" element={<Admin />} /> {/*<Outlet/> à utiliser */}
-      <Route path="admin/teas" element={<CrudTeas />} /> 
-      {/* <Route path="admin/categories" element={<CrudCategories />} /> 
-      <Route path="admin/images" element={<CrudImages />} /> 
-      <Route path="admin/packagings" element={<CrudPackagings />} /> 
-      <Route path="admin/packsteas" element={<CrudPacksTeas />} />  */}
-      <Route path="*" element={<ErrorPage />} />  
 
+        <Route path="/" element={<Home />} />
+        <Route path="teas" element={<Teas />} /> 
+        <Route path="teas/:id" element={<TeaItem />} /> 
+        <Route path="about" element={<About />} />
+
+        <Route path="admin" element={<Admin />} > {/*<Outlet/> à utiliser */}
+          <Route path="teas" element={<CrudTeas />} /> 
+          <Route path="categories" element={<CrudCategories />} /> 
+          <Route path="images" element={<CrudImages />} /> 
+          <Route path="packagings" element={<CrudPackagings />} /> 
+          <Route path="packsteas" element={<CrudPacksTeas />} /> 
+        </Route>
+        
+        <Route path="*" element={<ErrorPage />} />
 
       </Routes>
 

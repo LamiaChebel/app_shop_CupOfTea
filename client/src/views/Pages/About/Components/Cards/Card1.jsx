@@ -1,11 +1,11 @@
 function Card1(props) {
-    const {title,src} = props;
+    const {id, title,src} = props;
 
     return(
         <article>
-        <h3><span>{title}</span></h3>
+        <h3>{title}<span className="middle_border"></span></h3>
 
-        <img src={src} alt="" />
+        <img src={src} alt="" id={id}/>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Quaerat aspernatur earum quia, illum rem provident 
             necessitatibus fugiat consequatur fuga assumenda aliquam 

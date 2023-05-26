@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
-
 import matcha from "../../../assets/images/Page 404 images/high-angle-matcha-tea-poured-cup.jpg";
+
 
 function ErrorPage(){
     return(

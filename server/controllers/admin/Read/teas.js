@@ -3,7 +3,8 @@ import {pool} from "../../../config/database.js";
 const teasView = async (req,res) => {
     try {
         const sql = `SELECT tea.id, tea.title, tea.subtitle, tea.description, tea.story_tea,
-                    tea.created_at, tea.our_favorite, tea.category_id, tea.image_id from tea`;
+                    tea.created_at, tea.our_favorite, image.title AS imageTitle, image.url AS img from tea
+                    JOIN image ON tea.image_id = image.id`;
         const [teasResult] = await pool.query(sql);
         console.log("Display teas succeed");
         res.status(200).json({teas : teasResult});

@@ -8,9 +8,9 @@ function Wrapper1() {
         <section>
                 <h2>Notre &eacute;quipe</h2>
                 <Card1 title="Amélie, fondatrice de Cup of Tea"
-                src={amelie} />
+                src={amelie} id="amelie" />
                 <Card1 title="Xavier, fondateur de Cup of Tea"
-                src={xavier} />
+                src={xavier} id="xavier" />
         </section>
     )
 }

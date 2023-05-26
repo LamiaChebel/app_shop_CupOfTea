@@ -1,12 +1,10 @@
-
 import Wrapper from "./Components/Wrapper";
 
-function Teas() {
+function Teas(props) {
+
     return(
         <main className="teas">
             <Wrapper />
-            <Wrapper /> {/*boucle à faire en fonction des catégories de la db */}
-
         </main>
     )
 }

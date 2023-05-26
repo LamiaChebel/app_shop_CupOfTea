@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 
 import Header from "./views/MainComponents/Header";
 import Footer from "./views/MainComponents/Footer";
@@ -19,6 +19,7 @@ import CrudPackagings  from "./views/Pages/Admin/Components/CRUD/CrudPackagings"
 import CrudPacksTeas  from "./views/Pages/Admin/Components/CRUD/CrudPacksTeas";
 
 function App() {
+  const categoryId = useParams();
   return (
     <>
       <Header />
@@ -26,7 +27,9 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Home />} />
-        <Route path="teas" element={<Teas />} /> 
+        <Route path="teas" element={<Teas />}>
+          {/* <Route path="categories/:id" element={<Categories />} /> */}
+        </Route> 
         <Route path="teas/:id" element={<TeaItem />} /> 
         <Route path="about" element={<About />} />
 

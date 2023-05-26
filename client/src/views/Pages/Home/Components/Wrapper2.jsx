@@ -38,7 +38,7 @@ function Wrapper2() {
                     </figure> 
                 :
                 category.map((c) => { return(
-                <Link key={c.id} to={`/categories/${c.id}`}
+                <Link key={c.id} to={`/teas/categories/${c.id}`}
                     className="hover">
                     <img key={c.id} src={c.img} alt={c.imageTitle} />
                     {c.title}

@@ -47,7 +47,7 @@ function CrudTeas() {
                         < thead >
                             <tr>
                                 {Object.keys(key).map((k, i) => {
-                                    return ((k === "imageTitle") ? <></> : <th key={i}>{k}</th>)
+                                    return ((k === "imageTitle" || k === "category_id") ? <></> : <th key={i}>{k}</th>)
                                 })}
                                 <th>Actions</th>
                             </tr>
